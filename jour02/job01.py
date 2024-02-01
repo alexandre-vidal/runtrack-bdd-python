@@ -1,5 +1,7 @@
+# importing modules
 import mysql.connector
 
+# connecting to database
 mydb = mysql.connector.connect(
   host = 'localhost',
   user = 'username',
@@ -7,10 +9,13 @@ mydb = mysql.connector.connect(
   database = 'laplateforme'
 )
 
+# defining cursor
 mycursor = mydb.cursor()
 
-mycursor.execute("SELECT * FROM etudiant")
+# executing MySQL command
+mycursor.execute('SELECT * FROM etudiant')
 mycursor.execute('')
 
+# printing the result of the command
 for x in mycursor:
   print(x)
